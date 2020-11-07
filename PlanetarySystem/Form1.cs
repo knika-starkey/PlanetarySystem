@@ -13,9 +13,17 @@ namespace PlanetarySystem
     public partial class Form1 : Form
     {
         MT sun, mercury, venus, eart, mars, jupiter, saturn, uranus, neptune;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public Form1()
         {
             InitializeComponent();
+            pbSun.Location = new Point(this.Width / 2 - pbSun.Width / 2, this.Height / 2 - pbSun.Height / 2);
+            pbMercury.Location = new Point(this.Width / 2 - pbMercury.Width / 2 , this.Height / 2 - pbSun.Height / 2- (int)MT.Scale(57910006.0));
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -41,8 +49,7 @@ namespace PlanetarySystem
             Vector Fm = -Fe;
 
             mercury.Move(dt, Fm);
-
-            pbMercury.Location = new Point((int)mercury.r.X, (int)mercury.r.Y);
+            pbMercury.Location = MT.GetCoords(mercury.r);
             
         }
     }

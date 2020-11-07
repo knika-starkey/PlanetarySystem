@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,18 @@ namespace PlanetarySystem
             v += a * dt;
             r += v * dt;
 
+        }
+
+        public static Point GetCoords(Vector v)
+        {
+            Vector s = v / 9200000;
+            Point p = new Point((int)s.X, (int)s.Y);
+            return p;
+        }
+
+        public static double Scale(double s)
+        {
+            return s / 9200000;
         }
     }
 }
