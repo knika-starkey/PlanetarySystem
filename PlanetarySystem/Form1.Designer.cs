@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbSun = new System.Windows.Forms.PictureBox();
             this.pbMercury = new System.Windows.Forms.PictureBox();
             this.pbVenus = new System.Windows.Forms.PictureBox();
             this.pbEarth = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pbMars = new System.Windows.Forms.PictureBox();
+            this.pbJupiter = new System.Windows.Forms.PictureBox();
+            this.pbSaturn = new System.Windows.Forms.PictureBox();
+            this.pbUrarnus = new System.Windows.Forms.PictureBox();
+            this.pbNeptune = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbSun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMercury)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVenus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEarth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMars)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJupiter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSaturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUrarnus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNeptune)).BeginInit();
             this.SuspendLayout();
             // 
             // pbSun
             // 
-            this.pbSun.Location = new System.Drawing.Point(0, 0);
+            this.pbSun.Image = global::PlanetarySystem.Properties.Resources.sun;
+            this.pbSun.Location = new System.Drawing.Point(417, 459);
             this.pbSun.Name = "pbSun";
-            this.pbSun.Size = new System.Drawing.Size(100, 50);
+            this.pbSun.Size = new System.Drawing.Size(50, 50);
             this.pbSun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSun.TabIndex = 0;
             this.pbSun.TabStop = false;
@@ -62,92 +64,110 @@
             // 
             // pbMercury
             // 
-            this.pbMercury.Location = new System.Drawing.Point(165, 12);
+            this.pbMercury.Image = global::PlanetarySystem.Properties.Resources.mercury;
+            this.pbMercury.Location = new System.Drawing.Point(468, 403);
             this.pbMercury.Name = "pbMercury";
-            this.pbMercury.Size = new System.Drawing.Size(100, 50);
+            this.pbMercury.Size = new System.Drawing.Size(50, 50);
             this.pbMercury.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMercury.TabIndex = 1;
             this.pbMercury.TabStop = false;
             // 
             // pbVenus
             // 
-            this.pbVenus.Location = new System.Drawing.Point(21, 64);
+            this.pbVenus.Image = global::PlanetarySystem.Properties.Resources.venus;
+            this.pbVenus.Location = new System.Drawing.Point(524, 347);
             this.pbVenus.Name = "pbVenus";
-            this.pbVenus.Size = new System.Drawing.Size(100, 50);
+            this.pbVenus.Size = new System.Drawing.Size(50, 50);
             this.pbVenus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbVenus.TabIndex = 2;
             this.pbVenus.TabStop = false;
             // 
             // pbEarth
             // 
-            this.pbEarth.Location = new System.Drawing.Point(33, 135);
+            this.pbEarth.Image = global::PlanetarySystem.Properties.Resources.earth;
+            this.pbEarth.Location = new System.Drawing.Point(576, 294);
             this.pbEarth.Name = "pbEarth";
-            this.pbEarth.Size = new System.Drawing.Size(100, 50);
+            this.pbEarth.Size = new System.Drawing.Size(50, 50);
+            this.pbEarth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEarth.TabIndex = 3;
             this.pbEarth.TabStop = false;
             // 
-            // pictureBox5
+            // pbMars
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(35, 255);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
+            this.pbMars.Image = global::PlanetarySystem.Properties.Resources.mars;
+            this.pbMars.Location = new System.Drawing.Point(631, 239);
+            this.pbMars.Name = "pbMars";
+            this.pbMars.Size = new System.Drawing.Size(50, 50);
+            this.pbMars.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMars.TabIndex = 4;
+            this.pbMars.TabStop = false;
             // 
-            // pictureBox6
+            // pbJupiter
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(153, 59);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
+            this.pbJupiter.Image = global::PlanetarySystem.Properties.Resources.jupiter;
+            this.pbJupiter.Location = new System.Drawing.Point(685, 185);
+            this.pbJupiter.Name = "pbJupiter";
+            this.pbJupiter.Size = new System.Drawing.Size(50, 50);
+            this.pbJupiter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbJupiter.TabIndex = 5;
+            this.pbJupiter.TabStop = false;
             // 
-            // pictureBox7
+            // pbSaturn
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(139, 150);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
+            this.pbSaturn.Image = global::PlanetarySystem.Properties.Resources.saturn;
+            this.pbSaturn.Location = new System.Drawing.Point(741, 129);
+            this.pbSaturn.Name = "pbSaturn";
+            this.pbSaturn.Size = new System.Drawing.Size(100, 50);
+            this.pbSaturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSaturn.TabIndex = 6;
+            this.pbSaturn.TabStop = false;
             // 
-            // pictureBox8
+            // pbUrarnus
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(314, 77);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
+            this.pbUrarnus.Image = global::PlanetarySystem.Properties.Resources.uranus;
+            this.pbUrarnus.Location = new System.Drawing.Point(818, 73);
+            this.pbUrarnus.Name = "pbUrarnus";
+            this.pbUrarnus.Size = new System.Drawing.Size(50, 50);
+            this.pbUrarnus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUrarnus.TabIndex = 7;
+            this.pbUrarnus.TabStop = false;
             // 
-            // pictureBox9
+            // pbNeptune
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(199, 314);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox9.TabIndex = 8;
-            this.pictureBox9.TabStop = false;
+            this.pbNeptune.Image = global::PlanetarySystem.Properties.Resources.neptune;
+            this.pbNeptune.Location = new System.Drawing.Point(862, 26);
+            this.pbNeptune.Name = "pbNeptune";
+            this.pbNeptune.Size = new System.Drawing.Size(50, 50);
+            this.pbNeptune.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNeptune.TabIndex = 8;
+            this.pbNeptune.TabStop = false;
             // 
-            // pictureBox10
+            // button1
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(376, 181);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 9;
-            this.pictureBox10.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(897, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(984, 961);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pbNeptune);
+            this.Controls.Add(this.pbUrarnus);
+            this.Controls.Add(this.pbSaturn);
+            this.Controls.Add(this.pbJupiter);
+            this.Controls.Add(this.pbMars);
             this.Controls.Add(this.pbEarth);
             this.Controls.Add(this.pbVenus);
             this.Controls.Add(this.pbMercury);
@@ -158,12 +178,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMercury)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVenus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEarth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMars)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJupiter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSaturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUrarnus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNeptune)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,12 +193,13 @@
         private System.Windows.Forms.PictureBox pbMercury;
         private System.Windows.Forms.PictureBox pbVenus;
         private System.Windows.Forms.PictureBox pbEarth;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pbMars;
+        private System.Windows.Forms.PictureBox pbJupiter;
+        private System.Windows.Forms.PictureBox pbSaturn;
+        private System.Windows.Forms.PictureBox pbUrarnus;
+        private System.Windows.Forms.PictureBox pbNeptune;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
