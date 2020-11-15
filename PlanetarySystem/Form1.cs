@@ -12,7 +12,10 @@ namespace PlanetarySystem
 {
     public partial class Form1 : Form
     {
-        MT sun, mercury, venus, eart, mars, jupiter, saturn, uranus, neptune;
+        MT sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
+
+        MT[] planets;
+        PictureBox[] pbPlanets;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -22,8 +25,6 @@ namespace PlanetarySystem
         public Form1()
         {
             InitializeComponent();
-            pbSun.Location = new Point((this.Width - pbSun.Width) / 2, (this.Height - pbSun.Height) / 2);
-            pbMercury.Location = new Point((this.Width - pbMercury.Width) / 2 , this.Height/2 - pbSun.Height/2 - pbMercury.Height- (int)MT.Scale(57910000.0));
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -33,24 +34,50 @@ namespace PlanetarySystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sun = new MT() { m = 1.9885e+30, v = new Vector(), r = new Vector(pbSun.Left, pbSun.Top) };
-            mercury = new MT() { m = 3.2868e+23, v = new Vector(47.87, 0), r = new Vector(pbMercury.Left, pbMercury.Top) };
+            sun = new MT() { m = 1.9885e+30, v = new Vector(), r = new Vector(0, 0) };
+            mercury = new MT() { m = 3.2868e+23, v = new Vector(47360, 0), r = new Vector(0, 5.79e+10) };
+            venus = new MT() { m = 4.867e+24, v = new Vector(35020, 0), r = new Vector(0, 1.0755e+11) };
+            earth = new MT() { m = 5.972e+24, v = new Vector(29783, 0), r = new Vector(0, 1.4796e+11) };
+            mars = new MT() { m = 6.39e+23, v = new Vector(24130, 0), r = new Vector(0, 2.183e+11) };
+            jupiter = new MT() { m = 1.898e+27, v = new Vector(13070, 0), r = new Vector(0, 7.783e+11) };
+            saturn = new MT() { m = 5.683e+26, v = new Vector(9670, 0), r = new Vector(0, 1.4298e+12) };
+            uranus = new MT() { m = 8.681e+25, v = new Vector(6840, 0), r = new Vector(0, 2.87e+12) };
+            neptune = new MT() { m = 1.024e+26, v = new Vector(5480, 0), r = new Vector(0, 4.495e+12) };
 
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            double dt = timer1.Interval / 1000.0 * 30000;
-
-            Vector m_e = sun.r - mercury.r;
-            double r3 = Math.Pow(m_e.Abs, 3);
-            Vector Fe = -6.67e-29 * sun.m * mercury.m *  m_e / r3 ;
-            Vector Fm = -Fe;
-
-            mercury.Move(dt, Fm);
-            pbMercury.Location = MT.GetCoords(mercury.r);
+            planets = new MT[] { mercury, venus, earth, mars, jupiter, saturn, uranus, neptune };
+            pbPlanets = new PictureBox[] { pbMercury, pbVenus, pbEarth, pbMars, pbJupiter, pbSaturn, pbUrarnus, pbNeptune };
             
+            
+            double dt = 172800;//время двух ней в секундах;
+            Vector Fe;
+            Vector FSun = new Vector(0,0);
+            for (int i = 0; i < planets.Length; i++)
+            {
+                Fe = GetF(planets[i]);
+                FSun -= Fe;
+                planets[i].Move(dt, Fe);
+                pbPlanets[i].Location = MT.GetCoords(planets[i].r);
+            }
+
+            sun.Move(dt, FSun);
+            pbSun.Location = MT.GetCoords(sun.r);
+            
+        }
+
+        private Vector GetF(MT mt)
+        {
+            Vector m_e;
+            double r3;
+
+            m_e = mt.r - sun.r;
+            r3 = Math.Pow(m_e.Abs, 3);
+
+            return -6.67e-11 * sun.m * mt.m * m_e / r3;
         }
     }
 }

@@ -22,14 +22,10 @@ namespace PlanetarySystem
 
         public static Point GetCoords(Vector v)
         {
-            Vector s = v / 9200000;
-            Point p = new Point((int)s.X, (int)s.Y);
+            Vector s = v / 9e+9;//расстояние в метрах до марса *1у+9
+            Point p = new Point((int)s.X + 600, (int)s.Y + 500);
             return p;
         }
 
-        public static double Scale(double s)
-        {
-            return s / 9200000;
-        }
     }
 }

@@ -70,7 +70,7 @@ namespace PlanetarySystem
         {
             get 
             { 
-                return Math.Round(Math.Sqrt(SquareAbs));
+                return Math.Sqrt(SquareAbs);
             }
         }
         public Vector GetNorm()
