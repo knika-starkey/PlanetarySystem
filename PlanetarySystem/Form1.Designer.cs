@@ -107,7 +107,7 @@
             this.pbJupiter.Image = global::PlanetarySystem.Properties.Resources.jupiter;
             this.pbJupiter.Location = new System.Drawing.Point(587, 239);
             this.pbJupiter.Name = "pbJupiter";
-            this.pbJupiter.Size = new System.Drawing.Size(20, 20);
+            this.pbJupiter.Size = new System.Drawing.Size(10, 10);
             this.pbJupiter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbJupiter.TabIndex = 5;
             this.pbJupiter.TabStop = false;
@@ -117,7 +117,7 @@
             this.pbSaturn.Image = global::PlanetarySystem.Properties.Resources.saturn;
             this.pbSaturn.Location = new System.Drawing.Point(615, 202);
             this.pbSaturn.Name = "pbSaturn";
-            this.pbSaturn.Size = new System.Drawing.Size(40, 20);
+            this.pbSaturn.Size = new System.Drawing.Size(20, 10);
             this.pbSaturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSaturn.TabIndex = 6;
             this.pbSaturn.TabStop = false;
@@ -127,7 +127,7 @@
             this.pbUrarnus.Image = global::PlanetarySystem.Properties.Resources.uranus;
             this.pbUrarnus.Location = new System.Drawing.Point(673, 183);
             this.pbUrarnus.Name = "pbUrarnus";
-            this.pbUrarnus.Size = new System.Drawing.Size(10, 10);
+            this.pbUrarnus.Size = new System.Drawing.Size(6, 6);
             this.pbUrarnus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUrarnus.TabIndex = 7;
             this.pbUrarnus.TabStop = false;
@@ -137,7 +137,7 @@
             this.pbNeptune.Image = global::PlanetarySystem.Properties.Resources.neptune;
             this.pbNeptune.Location = new System.Drawing.Point(694, 163);
             this.pbNeptune.Name = "pbNeptune";
-            this.pbNeptune.Size = new System.Drawing.Size(10, 10);
+            this.pbNeptune.Size = new System.Drawing.Size(6, 6);
             this.pbNeptune.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbNeptune.TabIndex = 8;
             this.pbNeptune.TabStop = false;
