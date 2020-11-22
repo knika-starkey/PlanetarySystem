@@ -14,9 +14,14 @@ namespace PlanetarySystem
     {
         MT sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
 
+        
+
         MT[] planets;
         PictureBox[] pbPlanets;
+        private void tBScale_Scroll(object sender, EventArgs e)
+        {
 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -51,33 +56,34 @@ namespace PlanetarySystem
         {
             planets = new MT[] { mercury, venus, earth, mars, jupiter, saturn, uranus, neptune };
             pbPlanets = new PictureBox[] { pbMercury, pbVenus, pbEarth, pbMars, pbJupiter, pbSaturn, pbUrarnus, pbNeptune };
-            
-            
+
+
             double dt = 172800;//время двух ней в секундах;
             Vector Fe;
             Vector FSun = new Vector(0,0);
             for (int i = 0; i < planets.Length; i++)
             {
-                Fe = GetF(planets[i]);
+                Fe = GetF(planets[i], sun);
                 FSun -= Fe;
                 planets[i].Move(dt, Fe);
-                pbPlanets[i].Location = MT.GetCoords(planets[i].r);
+                pbPlanets[i].Location = MT.GetCoords(planets[i].r, tBScale.Value);
             }
 
             sun.Move(dt, FSun);
-            pbSun.Location = MT.GetCoords(sun.r);
+            pbSun.Location = MT.GetCoords(sun.r, tBScale.Value);
             
         }
 
-        private Vector GetF(MT mt)
+        private Vector GetF(MT mt, MT c)
         {
             Vector m_e;
             double r3;
 
-            m_e = mt.r - sun.r;
+            m_e = mt.r - c.r;
             r3 = Math.Pow(m_e.Abs, 3);
 
-            return -6.67e-11 * sun.m * mt.m * m_e / r3;
+            return -6.67e-11 * c.m * mt.m * m_e / r3;
         }
+
     }
 }

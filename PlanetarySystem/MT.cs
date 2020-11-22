@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PlanetarySystem
 {
@@ -20,12 +21,18 @@ namespace PlanetarySystem
 
         }
 
-        public static Point GetCoords(Vector v)
+        public static Point GetCoords(Vector v, int n)
         {
-            Vector s = v / 9e+9;//расстояние в метрах до марса *1у+9
+            Vector s = v / (n*1e+8);//расстояние в метрах до марса *1у+9
             Point p = new Point((int)s.X + 600, (int)s.Y + 500);
             return p;
         }
 
+        public static Point GetCoordsSatellite(Vector v, int n, Point o)
+        {
+            Vector s = v / (n * 1e+8);//расстояние в метрах до марса *1у+9
+            Point p = new Point((int)s.X + o.X, (int)s.Y + o.Y);
+            return p;
+        }
     }
 }
