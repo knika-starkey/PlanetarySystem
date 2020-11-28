@@ -64,16 +64,22 @@ namespace PlanetarySystem
             double dt = 172800;//время двух ней в секундах;
             Vector Fe;
             Vector FSun = new Vector(0, 0);
+            Vector Fs = new Vector(0, 0);
+
             for (int i = 0; i < planets.Length; i++)
             {
+                if (i == 2)
+                {
+                    Fs  = GetF(moon, planets[i]);
+                    moon.Move(dt, Fs);
+                    pbMoon.Location = MT.GetCoordsSatellite(moon.r, tBScale.Value, pbPlanets[i].Location);
+                }
                 Fe = GetF(planets[i], sun);
+                
                 FSun -= Fe;
                 planets[i].Move(dt, Fe);
                 pbPlanets[i].Location = MT.GetCoords(planets[i].r, tBScale.Value);
             }
-
-            moon.Move(dt, GetF(moon, earth));
-            pbMoon.Location = MT.GetCoordsSatellite(moon.r, tBScale.Value, pbEarth.Location);
 
             sun.Move(dt, FSun);
             pbSun.Location = MT.GetCoords(sun.r, tBScale.Value);

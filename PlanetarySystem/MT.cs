@@ -34,5 +34,6 @@ namespace PlanetarySystem
             Point p = new Point((int)s.X + o.X, (int)s.Y + o.Y);
             return p;
         }
+
     }
 }
