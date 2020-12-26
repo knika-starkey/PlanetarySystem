@@ -41,7 +41,6 @@
             this.pbVenus = new System.Windows.Forms.PictureBox();
             this.pbMercury = new System.Windows.Forms.PictureBox();
             this.pbSun = new System.Windows.Forms.PictureBox();
-            this.pbMoon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tBScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNeptune)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUrarnus)).BeginInit();
@@ -52,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbVenus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMercury)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSun)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMoon)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -172,23 +170,12 @@
             this.pbSun.TabStop = false;
             this.pbSun.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pbMoon
-            // 
-            this.pbMoon.Image = global::PlanetarySystem.Properties.Resources.moon;
-            this.pbMoon.Location = new System.Drawing.Point(562, 321);
-            this.pbMoon.Name = "pbMoon";
-            this.pbMoon.Size = new System.Drawing.Size(5, 5);
-            this.pbMoon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMoon.TabIndex = 11;
-            this.pbMoon.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1184, 1061);
-            this.Controls.Add(this.pbMoon);
             this.Controls.Add(this.tBScale);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pbNeptune);
@@ -213,7 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbVenus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMercury)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSun)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMoon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +219,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TrackBar tBScale;
-        private System.Windows.Forms.PictureBox pbMoon;
     }
 }
 

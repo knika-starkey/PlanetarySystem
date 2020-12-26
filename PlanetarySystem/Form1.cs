@@ -12,7 +12,7 @@ namespace PlanetarySystem
 {
     public partial class Form1 : Form
     {
-        MT sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, moon;
+        MT sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
 
 
 
@@ -43,9 +43,6 @@ namespace PlanetarySystem
             mercury = new MT() { m = 3.2868e+23, v = new Vector(47360, 0), r = new Vector(0, 5.79e+10) };
             venus = new MT() { m = 4.867e+24, v = new Vector(35020, 0), r = new Vector(0, 1.0755e+11) };
             earth = new MT() { m = 5.972e+24, v = new Vector(29783, 0), r = new Vector(0, 1.4796e+11) };
-
-            moon = new MT() { m = 7.36e+22, v = new Vector(1020, 0), r = new Vector(0, 3.844e+5) };
-
             mars = new MT() { m = 6.39e+23, v = new Vector(24130, 0), r = new Vector(0, 2.183e+11) };
             jupiter = new MT() { m = 1.898e+27, v = new Vector(13070, 0), r = new Vector(0, 7.783e+11) };
             saturn = new MT() { m = 5.683e+26, v = new Vector(9670, 0), r = new Vector(0, 1.4298e+12) };
@@ -64,16 +61,9 @@ namespace PlanetarySystem
             double dt = 172800;//время двух ней в секундах;
             Vector Fe;
             Vector FSun = new Vector(0, 0);
-            Vector Fs = new Vector(0, 0);
 
             for (int i = 0; i < planets.Length; i++)
             {
-                if (i == 2)
-                {
-                    Fs  = GetF(moon, planets[i]);
-                    moon.Move(dt, Fs);
-                    pbMoon.Location = MT.GetCoordsSatellite(moon.r, tBScale.Value, pbPlanets[i].Location);
-                }
                 Fe = GetF(planets[i], sun);
                 
                 FSun -= Fe;
